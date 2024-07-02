@@ -20,9 +20,11 @@ const config = {
     },
     extend: {
       colors: {
-        primary: "#1D4ED8",
-        secondary: "#9333EA",
-        accent: "#F59E0B",
+        primary: '#9d1360',
+        secondary: '#670f32',
+        accent: '#d4af37',  // Gold
+        background: '#f5f5dc',  // Beige
+        text: '#333333',
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],

@@ -22,17 +22,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body
         className={cn(
-          "flex flex-col min-h-screen bg-background font-sans antialiased",
+          "flex flex-col min-h-screen bg-white font-sans antialiased",
           fontSans.variable
         )}
       >
-        <div className="w-full h-48 md:h-64 lg:h-[500px] relative">
+        <div className="w-full h-48 md:h-56 lg:h-[500px] relative bg-[#f0dfe7] rounded-xl border-b-8 border-[#a6286f] overflow-hidden">
           <Image
-            src="/assets/images/header.jpg"
+            src="/assets/images/1_Ong Thai-Massage_png.png"
             alt="Header image"
             layout="fill"
             objectFit="contain"
             quality={100}
+            className="rounded-xl"
             onLoad={(e) =>
               console.log((e.target as HTMLImageElement).naturalWidth)
             }

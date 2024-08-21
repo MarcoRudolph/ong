@@ -1,4 +1,5 @@
 import React from "react";
+import MassagePricing from "./MassagePricing";
 
 type Service = {
   service: string;

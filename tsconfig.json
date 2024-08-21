@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,10 +23,23 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "*": ["node_modules/*"]
-    }
+      "@/*": [
+        "./*"
+      ],
+      "*": [
+        "node_modules/*"
+      ]
+    },
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/HeaderImage.js"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "components/HeaderImage.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

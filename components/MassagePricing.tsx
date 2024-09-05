@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Card } from 'shadcn-ui';
+import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from  '../components/ui/card'
 
 
 interface MassagePricingProps {

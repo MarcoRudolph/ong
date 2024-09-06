@@ -1,23 +1,24 @@
-"use client";  // Marks this component as a client component
+"use client"; // Marks this component as a client component
 
-import React from 'react';
-import { useRouter } from 'next/navigation'; // Import useRouter from next/navigation for navigation
-import { MapPin, Phone, Mail } from 'lucide-react'; // Import icons from Lucide
+import React from "react";
+import { useRouter } from "next/navigation"; // Import useRouter from next/navigation for navigation
+import { MapPin, Phone, Mail } from "lucide-react"; // Import icons from Lucide
+import KlartextMessage from "./Disclaimer";
 
 const Welcome: React.FC = () => {
   const router = useRouter(); // Initialize router
 
   const handleButtonClick = () => {
-    router.push('/mitarbeitergesucht'); // Navigate to the route
+    router.push("/mitarbeitergesucht"); // Navigate to the route
   };
 
   return (
     <section className="flex flex-col items-center justify-center w-full p-8 text-center">
       {/* Welcome Heading */}
-      <h1 className="text-4xl font-bold mb-8">Willkommen</h1>
+      <h1 className="text-4xl font-semibold mb-8">Willkommen</h1>
 
       {/* Two Column Section */}
-      <div className="flex flex-col md:flex-row w-full md:w-1/2 gap-8 mb-8">
+      <div className="flex flex-col md:flex-row lg:w-1/2 sm:w-full gap-8 mb-8">
         {/* Left Column */}
         <div className="md:w-1/2 text-left">
           <div>
@@ -37,10 +38,11 @@ const Welcome: React.FC = () => {
             </p>
           </div>
           {/* Centered Button */}
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center items-center flex-col mt-5 w-full">
+            <KlartextMessage />
             <button
               onClick={handleButtonClick}
-              className="text-white px-6 py-2 rounded mb-8 hover:bg-blue-600 transition bg-slate-500"
+              className="text-white px-6 py-2 w-[200px] rounded mt-4 hover:bg-[#f0dfe7] hover:text-[#a6286f] transition bg-[#a6286f]"
             >
               Mitarbeiter gesucht
             </button>
@@ -56,8 +58,6 @@ const Welcome: React.FC = () => {
           />
         </div>
       </div>
-
-    
     </section>
   );
 };

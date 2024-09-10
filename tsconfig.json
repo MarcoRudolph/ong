@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
@@ -7,37 +8,28 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
     "moduleResolution": "node",
-    "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": "./",
     "incremental": true,
+    "module": "esnext",
+    "resolveJsonModule": true,
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/*": [
-        "./*"
-      ],
-      "*": [
-        "node_modules/*"
-      ]
-    },
-    "forceConsistentCasingInFileNames": true
+    ]
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
-    "components/HeaderImage.js"
+    ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

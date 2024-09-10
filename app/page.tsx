@@ -1,5 +1,3 @@
-// pages/index.tsx
-
 import React from "react";
 import Image from "next/image";
 import HeaderImage from "../components/HeaderImage";
@@ -9,7 +7,7 @@ import ImageGallery from "../components/ImageGallery";
 import Welcome from "../components/Welcome";
 import Impressum from "../components/Impressum";
 import FooterButtons from "../components/FooterButtons"; // Import the TSX FooterButtons component
-import Adress from "@/components/Adress";
+import Adress from "../components/Adress";
 
 const Home: React.FC = () => {
   return (

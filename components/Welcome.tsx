@@ -1,12 +1,15 @@
 "use client"; // Marks this component as a client component
 
-import React from "react";
-import { useRouter } from "next/navigation"; // Import useRouter from next/navigation for navigation
+import React, {useContext} from "react";
+import { useRouter  } from "next/navigation"; // Import useRouter from next/navigation for navigation
 import { MapPin, Phone, Mail } from "lucide-react"; // Import icons from Lucide
 import KlartextMessage from "./Disclaimer";
+import { UiContext } from '../lib/context/UiContext';
 
 const Welcome: React.FC = () => {
   const router = useRouter(); // Initialize router
+
+  const { state, dispatch } = useContext(UiContext);
 
   const handleButtonClick = () => {
     router.push("/mitarbeitergesucht"); // Navigate to the route
@@ -15,7 +18,11 @@ const Welcome: React.FC = () => {
   return (
     <section className="flex flex-col items-center justify-center w-full p-8 text-center">
       {/* Welcome Heading */}
-      <h1 className="text-4xl font-semibold mb-8">Willkommen</h1>
+      {!state.menuIsOpen && (
+        <h1 id="welcomeBig" className="text-2xl font-semibold mb-8">
+          Willkommen
+        </h1>
+      )}
 
       {/* Two Column Section */}
       <div className="flex flex-col md:flex-row lg:w-1/2 sm:w-full gap-8 mb-8">

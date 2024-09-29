@@ -1,5 +1,5 @@
-import type { Config } from "tailwindcss"
-const { fontFamily } = require("tailwindcss/defaultTheme")
+import type { Config } from "tailwindcss";
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 const config = {
   darkMode: ["class"],
@@ -19,6 +19,11 @@ const config = {
       },
     },
     extend: {
+      colors: {
+        darkred: '#a6286f',
+        redbright: '#f0dfe7',
+        redstd: '#c32c79',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -39,6 +44,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;

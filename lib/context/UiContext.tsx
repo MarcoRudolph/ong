@@ -4,14 +4,18 @@ import React, { Dispatch, createContext, useReducer } from "react";
 
 type StateType = {
   menuIsOpen: boolean;
+  isSmartphone: boolean;
 };
 
-type ActionType = {
-  type: string;
-};
+type ActionType = 
+  | { type: 'SHOWMENU' }
+  | { type: 'HIDEMENU' }
+  | { type: 'TOGGLEMENU' }
+  | { type: 'SET_SCREEN_SIZE'; payload: boolean };
 
 const initialState: StateType = {
   menuIsOpen: true,
+  isSmartphone: false
 };
 
 const reducer = (state: StateType, action: ActionType) => {
@@ -22,6 +26,8 @@ const reducer = (state: StateType, action: ActionType) => {
       return { ...state, menuIsOpen: false};
     case "TOGGLEMENU":
       return { ...state, menuIsOpen: !state.menuIsOpen};
+    case 'SET_SCREEN_SIZE':
+        return { ...state, isSmartphone: action.payload };
     default:
       return state;
   }

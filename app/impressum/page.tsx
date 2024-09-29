@@ -1,12 +1,14 @@
 'use client';  // Marks this component as a client component
 
 import React from 'react';
+import { useRouter } from "next/navigation";
 
 interface ImpressumProps {}
 
 const Impressum: React.FC<ImpressumProps> = () => {
+  const router = useRouter();
   return (
-    <div className="w-full max-w-3xl mx-auto p-6 rounded-lg shadow-lg overflow-y-auto mt-8">
+    <div className="flex flex-col w-full max-w-3xl mx-auto p-6 rounded-lg shadow-lg overflow-y-auto mt-8">
       {/* Impressum Content */}
       <div className="flex flex-col md:flex-row gap-8">
         {/* Left Column */}
@@ -105,6 +107,15 @@ const Impressum: React.FC<ImpressumProps> = () => {
           </p>
         </div>
       </div>
+      <div className="sm:hidden">
+        <button
+          onClick={() => {
+            router.push("/");
+          }}
+          className="text-white self-center mb-5 px-6 py-2 w-[200px] rounded mt-4 hover:bg-[#f0dfe7] hover:text-[#a6286f] transition bg-[#a6286f] mx-auto"
+        >Zurück</button>
+      </div>
+    
     </div>
   );
 };

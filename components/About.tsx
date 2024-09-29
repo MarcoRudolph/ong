@@ -6,10 +6,10 @@ import Image from "next/image"; // Import Next.js Image component
 const About: React.FC = () => {
   return (
     <section className="flex flex-col md:flex-row items-center justify-center w-full p-8">
-      <div className="flex flex-col md:flex-row lg:w-1/2 sm:w-full gap-8 mb-8">
+      <div className="flex flex-col md:flex-row lg:w-1/2 md:w-full gap-8 mb-8">
         {/* Text Section */}
-        <div className="w-1/2 text-left mb-6 md:mb-0">
-          <h2 className="text-2xl font-semibold mb-4">Über Orathai</h2>
+        <div className="w-full lg:w-1/2 text-left mb-6 md:mb-0">
+          <h2 className="text-2xl font-semibold mb-4 text-darkred">Über Orathai</h2>
           <p className="text-lg leading-relaxed">
             Orathai ist eine hochqualifizierte Masseurin, die eine hervorragende
             Ausbildung an der renommierten Wat Pho Massageschule in Bangkok

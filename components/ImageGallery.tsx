@@ -8,7 +8,7 @@ const ImageGallery: React.FC = () => {
     <div className="p-4">
       <div className="flex flex-col md:flex-row gap-4 items-start">
         {/* Image 1 */}
-        <div className="flex-none">
+        <div className="flex-none hidden sm:block">
           <Image
             src="/assets/images/WatPhoTempel.jpg" // Replace with the actual path to your image
             alt="Image 1"
@@ -19,7 +19,7 @@ const ImageGallery: React.FC = () => {
         </div>
 
         {/* Image 2 */}
-        <div className="flex-none">
+        <div className="flex-none hidden sm:block">
           <Image
             src="/assets/images/thai-öl-massage.png" // Replace with the actual path to your image
             alt="Image 2"
@@ -30,7 +30,7 @@ const ImageGallery: React.FC = () => {
         </div>
 
         {/* Image 3 */}
-        <div className="flex-none">
+        <div className="flex-none hidden sm:block">
           <Image
             src="/assets/images/watpho3.jpg" // Replace with the actual path to your image
             alt="Image 3"

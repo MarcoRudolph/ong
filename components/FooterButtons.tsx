@@ -14,12 +14,12 @@ const FooterButtons: React.FC = () => {
 
   return (
     <footer className="w-full py-4 bg-gray-100 flex justify-center space-x-4">
-      <button
+      {/* <button
         className="text-black text-sm hover:underline"
         onClick={() => handleNavigate('/agb')}
       >
         AGB
-      </button>
+      </button> */}
       <button
         className="text-black text-sm hover:underline"
         onClick={() => handleNavigate('/impressum')}
@@ -32,12 +32,12 @@ const FooterButtons: React.FC = () => {
       >
         Datenschutz
       </button>
-      <button
+      {/* <button
         className="text-black text-sm hover:underline"
         onClick={() => handleNavigate('/cookie')}
       >
         Cookie-Richtlinie
-      </button>
+      </button> */}
     </footer>
   );
 };

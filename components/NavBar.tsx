@@ -49,8 +49,8 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="w-full bg-gray-100 py-4">
-      <div className="flex justify-between items-between px-4">
+    <nav className="w-full bg-gray-100 py-4 ">
+      <div className="flex b px-4 md:justify-between md:items-between lg:items-center  lg:justify-center">
         <button
           className="block md:hidden text-gray-800 focus:outline-none"
           onClick={toggleMenu}
@@ -59,9 +59,9 @@ const Navbar: React.FC = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-16 6h16"></path>
           </svg>
         </button>
-        <p id="welcome" className="font-semibold text-2xl mr-10">Willkommen</p>
+        <p id="welcome" className="lg:hidden flex justify-center w-full md:absolute md:left-1/2 md:transform md:-translate-x-1/2 font-semibold text-2xl mr-6 text-darkred">Willkommen</p>
         <div></div>
-        <ul className="hidden md:flex md:items-center md:gap-8">
+        <ul className="hidden md:flex items-center justify-center md:gap-8">
           <li className="text-lg">
             <Link href="/#home" onClick={(e) => handleNavigation(e, '#home')} className="text-gray-800 hover:underline hover:text-black transition-colors duration-300">
               HOME
@@ -72,11 +72,11 @@ const Navbar: React.FC = () => {
               ÜBER ORATHAI
             </Link>
           </li>
-          <li className="text-lg">
+          {/* <li className="text-lg">
             <Link href="/#shop" onClick={(e) => handleNavigation(e, '#shop')} className="text-gray-800 hover:underline hover:text-black transition-colors duration-300">
               GUTSCHEIN
             </Link>
-          </li>
+          </li> */}
           <li className="text-lg">
             <Link href="/#contact" onClick={(e) => handleNavigation(e, '#contact')} className="text-gray-800 hover:underline hover:text-black transition-colors duration-300">
               KONTAKT
@@ -99,8 +99,8 @@ const Navbar: React.FC = () => {
             </Link>
           </li>
           <li className="text-lg">
-            <Link href="/#shop" onClick={(e) => handleNavigation(e, '#shop')} className="text-gray-800 hover:underline hover:text-black transition-colors duration-300">
-              GUTSCHEIN
+            <Link href="#preisliste" onClick={(e) => handleNavigation(e, '#preisliste')} className="text-gray-800 hover:underline hover:text-black transition-colors duration-300">
+              PREISLISTE
             </Link>
           </li>
           <li className="text-lg">

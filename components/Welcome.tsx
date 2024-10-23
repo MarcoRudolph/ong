@@ -47,7 +47,7 @@ const Welcome: React.FC = () => {
         <div className="w-full md:w-1/2 text-left px-4">
           <div className="w-full max-w-full">
             <h2 className="text-darkred text-xl lg:text-2xl font-semibold mb-4">
-              Über mein Studio
+              Über das Studio
             </h2>
             <p className="text-md leading-relaxed w-full">
               Entfliehen Sie dem Alltag und lassen Sie sich in meinem

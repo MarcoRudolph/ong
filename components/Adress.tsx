@@ -1,6 +1,6 @@
-import { Mail, MapPin, Phone } from "lucide-react";
-import React from "react";
 
+import React from "react";
+import Contact from "./Contact";
 interface Props {
   // Define your props here
 }
@@ -10,27 +10,7 @@ const Adress: React.FC<Props> = ({}) => {
     <div id="contact" className="mt-10">
     <h2 className="text-4xl text-center font-semibold mb-8 text-darkred">Kontakt</h2>
   
-    <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-0 mx-4">
-      {/* Address */}
-      <div className="flex items-center gap-2">
-        <MapPin size={20} />
-        <span>Pinneberg, Bahnhofstr. 41</span>
-      </div>
-  
-      {/* Phone */}
-      <div className="flex items-center gap-2">
-        <Phone size={20} />
-        <span>Tel.: 04101/5874333</span>
-      </div>
-  
-      {/* Email */}
-      <div className="flex items-center gap-2">
-        <Mail size={20} />
-        <a href="mailto:or.ongthaimassage@gmail.com" className="text-black hover:underline">
-          or.ongthaimassage@gmail.com
-        </a>
-      </div>
-    </div>
+    <Contact/>
   
     <div className="hidden sm:flex items-center justify-center font-semibold mb-5 text-center mx-4">
       <p>Gerne reservieren wir Ihren Termin zu individuellen Zeiten.</p>

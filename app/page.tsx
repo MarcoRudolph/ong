@@ -13,6 +13,7 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow flex flex-col items-center justify-start w-full">
+     
         <Welcome />
         <div id="about" className="flex flex-col justify-center items-center">
           <About />
@@ -20,7 +21,7 @@ const Home: React.FC = () => {
         </div>
         {/* Add other components below as needed */}
         <div id="contact" className="flex flex-col justify-center items-center">
-          <Adress />
+        <Adress />
         </div>
       </main>
 

@@ -1,11 +1,20 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import nodemailer from 'nodemailer';
 import { render } from '@react-email/render';
 import EmailTemplate from '../../components/EmailTemplate';
 
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  date: string;
+  message: string;
+}
+
 const ContactForm: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
     email: "",
@@ -13,12 +22,14 @@ const ContactForm: React.FC = () => {
     date: "",
     message: "",
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const handleChange = (e) => {
+
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -43,7 +54,7 @@ const ContactForm: React.FC = () => {
       } else {
         alert('Fehler beim Senden der Bewerbung. Bitte versuchen Sie es erneut.');
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Fehler beim Absenden:', error);
       alert('Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.');
     } finally {
@@ -133,9 +144,9 @@ const ContactForm: React.FC = () => {
             type="submit"
             className="px-4 py-2 bg-blue-600 text-white rounded"
             disabled={isSubmitting}
-            >
-              {isSubmitting ? 'Senden...' : 'Senden'}
-            </button>
+          >
+            {isSubmitting ? 'Senden...' : 'Senden'}
+          </button>
         </form>
       </div>
     </div>

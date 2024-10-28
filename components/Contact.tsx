@@ -6,7 +6,7 @@ interface ContactProps {
 
 const Contact: FC<ContactProps> = ({  }) => {
   return (
-    <div className="flex flex-row items-center gap-6 justify-center">
+    <div className="hidden lg:flex flex-row items-center lg:gap-6 justify-center">
        {/* Address */}
        <div className="flex items-center gap-2">
         <MapPin size={20} />

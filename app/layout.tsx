@@ -29,7 +29,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body
         className={cn(
-          "flex flex-col min-h-screen bg-white font-sans antialiased items-center",
+          "flex flex-col min-h-screen w-full p-2 md:w-full bg-white font-sans antialiased items-center p-0, m-0, overflow-hidden, overflow-x-hidden box-border",
           fontSans.variable
         )}
       >
@@ -51,7 +51,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             />
 
             {/* Address Section */}
-            <div className="absolute top-0 left-0 w-full p-4 z-10">
+            <div className="absolute top-0 left-0 w-full z-10">
               {/* <Adress /> */}
             </div>
           </div>

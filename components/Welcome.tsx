@@ -21,6 +21,8 @@ const Welcome: React.FC = () => {
     // Check on component mount
     handleResize();
 
+    console.log("menuIsOpen:" + state.menuIsOpen)
+
     // Add event listener for window resize
     window.addEventListener("resize", handleResize);
 
@@ -35,16 +37,16 @@ const Welcome: React.FC = () => {
   return (
     <section className="flex flex-col items-center justify-center w-full pt-8 text-center overflow-x-hidden">
       {/* Welcome Heading */}
-      {!state.menuIsOpen && state.isSmartphone && (
+      {!state.menuIsOpen && !state.isSmartphone && (
         <h1 id="welcomeBig" className="text-2xl text-darkred font-semibold mb-8">
           Willkommen
         </h1>
       )}
 
       {/* Two Column Section */}
-      <div className="flex flex-col md:flex-row w-full lg:w-1/2 gap-4 md:gap-6 lg:gap-8 mb-8 overflow-x-hidden">
+      <div className="flex flex-col md:flex-row w-full xl:w-1/2 gap-4 md:gap-6 lg:gap-8 mb-8 overflow-x-hidden">
         {/* Left Column */}
-        <div className="w-full md:w-1/2 text-left px-4">
+        <div className="w-full md:ml-10 md:w-3/4 xl:w-1/2 text-left px-4">
           <div className="w-full max-w-full">
             <h2 className="text-darkred text-xl lg:text-2xl font-semibold mb-4">
               Über das Studio
@@ -77,7 +79,7 @@ const Welcome: React.FC = () => {
         </div>
 
         {/* Right Column */}
-        <div id="preisliste" className="w-full md:w-1/2 flex justify-center mt-4 md:mt-0 px-4">
+        <div id="preisliste" className="w-full xl:w-1/2 flex justify-center items-start mt-4 md:mt-0 px-4">
           <img
             src="/assets/images/Flyer_10.5x21 cm-02.jpg" // Replace with your actual image path
             alt="Studio"

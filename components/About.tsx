@@ -1,44 +1,126 @@
 "use client"; // Marks this component as a client component
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image"; // Import Next.js Image component
 
 const About: React.FC = () => {
+  const [showMore, setShowMore] = useState(false);
+
+
+  const readMore = () => {
+    try {
+      setShowMore(true);
+      const element = document.querySelector("#about");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      } 
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const readLess = () => {
+    try {
+      setShowMore(false);
+      const element = document.querySelector("#about");
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      } 
+
+      
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
-    <section className="flex flex-col md:flex-row items-center justify-center w-full p-8">
-      <div className="flex flex-col md:flex-row lg:w-1/2 md:w-full gap-8 mb-8">
+    <section className="flex flex-col md:flex-row items-start justify-center w-full md:p-0 xl:w-1/2">
+      <div className="flex flex-col md:flex-row w-full gap-8 mb-8">
         {/* Text Section */}
-        <div className="w-full lg:w-1/2 text-left mb-6 md:mb-0">
-          <h2 className="text-2xl font-semibold mb-4 text-darkred">Über Orathai</h2>
+        <div className="w-full lg:w-1/2 xl:w-1/2 text-left mb-6 md:mb-0 px-4">
+          <h2 className="text-2xl font-semibold mb-4 text-darkred">
+            Über Orathai
+          </h2>
           <p className="text-lg leading-relaxed">
-            Orathai ist eine hochqualifizierte Masseurin, die eine hervorragende
-            Ausbildung an der renommierten Wat Pho Massageschule in Bangkok
-            genossen hat, dem bekanntesten Ausbildungsort für traditionelle
-            medizinische Thai-Massagen. Diese Schule ist bekannt für ihre
-            strengen Standards und die Vermittlung tiefgreifender Techniken, die
-            sie in ihrer Arbeit anwendet. Orathai kann durch ihre langjährige
-            Erfahrung und ihren feinen Tastsinn Verspannungen und Schmerzpunkte
-            schnell erkennen und gezielt behandeln. Sie versteht es, mit ihrer
-            ruhigen und präzisen Technik die Ursachen von Schmerzen zu
-            lokalisieren und effektiv zu lösen, was zu einer tiefen Entspannung
-            und einem gesteigerten Wohlbefinden führt. Ihre Fähigkeit, sich auf
-            die individuellen Bedürfnisse jedes Kunden einzustellen, macht jede
-            Massage zu einem einzigartigen und heilenden Erlebnis. Durch ihre
-            fundierte Ausbildung und ihre leidenschaftliche Hingabe sorgt
-            Orathai dafür, dass ihre Kunden nicht nur entspannen, sondern auch
-            langanhaltende Linderung erfahren.
+            Orathai begann im Alter von 4 Jahren von ihrem Vater, einem
+            erfahrenen Masseur, die Lehren über Körper und Massage zu erlernen.
+            Mit der Lernfähigkeit eines Kindes hat sie bereits früh erfahren, wo
+            im Körper die Muskeln und Sehnen verlaufen. Das Spüren von
+            Verklebungen und Blockaden hat sie bereits vor ihrer Ausbildung
+            beherrscht.
+            <br />
+            <br />
+            Später vertiefte sie ihr Wissen an der renommierten Wat Pho
+            Massageschule in Bangkok, bekannt für ihre strengen Standards und
+            die Vermittlung tiefgreifender Techniken der traditionellen
+            medizinischen Thai-Massage.
           </p>
+
+          {/* "Mehr lesen" Link */}
+          {!showMore && (
+            <p>
+              <button
+                className="border-none text-darkred text-lg bg-none underline"
+                onClick={(e) => {
+                  console.log("clicked");
+                  e.preventDefault();
+
+                  console.log("prevented succsesful")
+                  readMore();
+                }}
+              >
+                Mehr lesen
+              </button>
+            </p>
+          )}
+
+          {/* Hidden Text */}
+          {showMore && (
+            <>
+              <p className="text-lg leading-relaxed">
+                <br />
+                Durch ihre langjährige Erfahrung und ihren feinen Tastsinn
+                erkennt Orathai Verspannungen und Schmerzpunkte schnell und
+                behandelt sie gezielt. Mit ruhiger und präziser Technik
+                lokalisiert sie die Ursachen von Schmerzen und löst sie
+                effektiv, was zu tiefer Entspannung und gesteigertem
+                Wohlbefinden führt.
+                <br />
+                <br />
+                Ihre Fähigkeit, sich auf die individuellen Bedürfnisse jedes
+                Kunden einzustellen, macht jede Massage zu einem einzigartigen
+                und heilenden Erlebnis. Mit ihrer fundierten Ausbildung und
+                Hingabe sorgt Orathai dafür, dass ihre Kunden nicht nur
+                entspannen, sondern auch langanhaltende Linderung erfahren.
+              </p>
+
+              {/* "Weniger lesen" Link */}
+              <p>
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    readLess();
+                  }}
+                  className="border-none text-darkred text-lg bg-none underline"
+                >
+                  Weniger lesen
+                </button>
+              </p>
+            </>
+          )}
         </div>
 
         {/* Image Section */}
-        <div className="flex justify-center md:justify-end w-1/2">
-          <Image
-            src="/assets/images/orathai.jpg" // Replace with the actual path to your image
-            alt="Orathai"
-            width={450} // Adjust the width as needed
-            height={400} // Adjust the height as needed
-            className="rounded-lg"
-          />
+        <div className="flex justify-center md:justify-end w-full xl:w-1/2 px-4">
+          <div className="relative w-full h-[650px]">
+            <Image
+              src="/assets/images/orathai.jpg" // Pfad zum Bild
+              alt="Orathai"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-lg"
+            />
+          </div>
         </div>
       </div>
     </section>

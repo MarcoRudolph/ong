@@ -8,7 +8,7 @@ interface ImpressumProps {}
 const Impressum: React.FC<ImpressumProps> = () => {
   const router = useRouter();
   return (
-    <div className="flex flex-col w-full max-w-3xl mx-auto p-6 rounded-lg shadow-lg overflow-y-auto mt-8">
+    <div className="flex flex-col w-full max-w-3xl mx-auto rounded-lg shadow-lg overflow-y-auto mt-8">
       {/* Impressum Content */}
       <div className="flex flex-col md:flex-row gap-8">
         {/* Left Column */}

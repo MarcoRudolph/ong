@@ -63,7 +63,7 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row items-start justify-center mt-10 mb-10">
+    <div className="flex flex-col lg:flex-row items-start md:items-center justify-center mt-10 mb-10">
       <div className="w-full lg:w-1/4 px-10">
         <h1 className="text-2xl text-darkred">Wir suchen Dich</h1>
         <p>
@@ -74,7 +74,7 @@ const ContactForm: React.FC = () => {
           freuen wir uns auf Ihre Kontaktaufnahme! Gerne sonst auch einfach auf Handy anrufen.
         </p>
       </div>
-      <div className="contact-form w-full lg:w-1/4">
+      <div className="contact-form w-full md:w-1/2 lg:w-1/4 md:mt-5">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex flex-col">
             <label className="mb-1">Vorname *</label>
